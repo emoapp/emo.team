@@ -11,7 +11,7 @@ git submodule update --init
 hugo server --disableFastRender -p 2000
 ```
 
-GitHub Actions 自动发布
+使用 `npx gh-pages -d public` 发布 GitHub Pages
 
 ---
 
