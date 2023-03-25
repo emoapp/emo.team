@@ -1,0 +1,44 @@
+name: github pages
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+on:
+  push:
+    branches:
+      - master # Set a branch to deploy
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: "http://thisemo.com"
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest"
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        if: ${{ github.ref_name == 'master' }}
+        with:
+          path: './public'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        if: ${{ github.ref_name == 'master' }}
+        uses: actions/deploy-pages@v1

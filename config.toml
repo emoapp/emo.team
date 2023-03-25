@@ -1,0 +1,95 @@
+baseurl = "http://www.thisemo.com"
+#baseurl = "https://emoapp.github.io/web"
+title = "emo.team"
+theme = "hugo-coder"
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+paginate = 20
+
+pygmentsstyle = "bw"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+disqusShortname = ""
+
+[params]
+  author = ""
+  info = "ing"
+  description = "No replies"
+  keywords = "emo,app"
+  avatarurl = "images/avatar.png"
+
+  favicon_32 = "images/favicon-32x32.png"
+  favicon_16 = "images/favicon-16x16.png"
+
+  footercontent = "<span style='font-size: 3.6rem;'>©</span> Hybridtheory Digital Entertainment LLC."
+  hideFooter = false
+  hideCredits = true
+  hideCopyright = true
+  since = 2022
+
+  enableTwemoji = false
+
+  colorScheme = "dark"
+  hidecolorschemetoggle = true
+
+#   customCSS = ["css/custom.css"]
+#   customSCSS = ["scss/custom.scss"]
+#   customJS = ["js/custom.js"]
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+# # Social links
+[[params.social]]
+  name = "Discord"
+  icon = "fa fa-discord fa-2x"
+  weight = 0
+  url = "https://discord.gg/dUmjTrMMYF"
+
+[[params.social]]
+  name = "Instagram"
+  icon = "fa fa-instagram fa-2x"
+  weight = 1
+  url = "https://www.instagram.com/cyber.sari/"
+
+[[params.social]]
+  name = "App Store"
+  icon = "fa fa-apple fa-2x"
+  weight = 2
+  url = "http://example.com"
+
+[[params.social]]
+  name = "Twitter"
+  icon = "fa fa-twitter fa-2x"
+  weight = 3
+  url = "https://twitter.com/Cyber_Sari"
+
+[[params.social]]
+  name = "Github"
+  icon = "fa fa-github fa-2x"
+  weight = 4
+  url = "https://www.hybridtheory.io/github.com/emoapp"
+
+# Menu links
+[[menu.main]]
+  name = "🗺️ Cyber NET"
+  weight = 1
+  url  = "https://join.thisemo.com/cybernet/"
+
+[[menu.main]]
+  name = "📢 Posts"
+  weight = 2
+  url  = "posts/"
+[[menu.main]]
+  name = "👉 Guidelines"
+  weight = 3
+  url = "pages/guidelines"
+
+[markup.goldmark.renderer]
+hardWraps = false
+unsafe = true
